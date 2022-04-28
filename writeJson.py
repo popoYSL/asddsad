@@ -318,7 +318,7 @@ def getJson():
             for i in range(0,len(indexList),n):
                 with open(f'json/index/index{i}.json',"w",encoding="utf-8") as f:
                     json.dump(indexList[i:i+n],f)
-                countNum+=1
+                countNum=i
             numList = {'indexNum':len(indexList),'num':countNum}
             with open(f'json/num.json',"w",encoding="utf-8") as f:
                 json.dump(numList,f)        
