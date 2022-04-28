@@ -314,9 +314,14 @@ def getJson():
                 if f.endswith('json'):
                     os.remove(os.path.join('json/index',f))
             n = 48  #大列表中几个数据组成一个小列表
+            countNum = 0
             for i in range(0,len(indexList),n):
                 with open(f'json/index/index{i}.json',"w",encoding="utf-8") as f:
                     json.dump(indexList[i:i+n],f)
+                countNum+=1
+            numList = {'indexNum':len(indexList),'num':countNum}
+            with open(f'json/num.json',"w",encoding="utf-8") as f:
+                json.dump(numList,f)        
             jableList = []
             tktubeList = []
 
